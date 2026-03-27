@@ -59,7 +59,7 @@ class GeorgianUtils {
       GeorgianData.regex['mtavruli']!.hasMatch(str),
       GeorgianData.regex['asomtavruli']!.hasMatch(str),
       GeorgianData.regex['nuskhuri']!.hasMatch(str),
-      GeorgianData.regex['latin']!.hasMatch(str)
+      GeorgianData.regex['latin']!.hasMatch(str),
     ];
 
     bool same(List<bool> a, List<bool> b) {
@@ -69,15 +69,23 @@ class GeorgianUtils {
       return true;
     }
 
-    if (same(vector, [true, false, false, false, false, false])) return 'mkhedruli';
-    if (same(vector, [false, true, false, false, false, false])) return 'mtavruli';
-    if (same(vector, [false, false, true, false, false, false])) return 'asomtavruli';
-    if (same(vector, [false, false, false, true, false, false])) return 'nuskhuri';
+    if (same(vector, [true, false, false, false, false, false]))
+      return 'mkhedruli';
+    if (same(vector, [false, true, false, false, false, false]))
+      return 'mtavruli';
+    if (same(vector, [false, false, true, false, false, false]))
+      return 'asomtavruli';
+    if (same(vector, [false, false, false, true, false, false]))
+      return 'nuskhuri';
 
-    if (same(vector, [true, true, false, false, false, false])) return 'tfileliseuli';
-    if (same(vector, [true, false, true, false, false, false])) return 'shanidziseuli';
-    if (same(vector, [false, false, true, true, false, false])) return 'khutsuri';
-    if (same(vector, [false, true, true, false, false, false])) return 'sasataure';
+    if (same(vector, [true, true, false, false, false, false]))
+      return 'tfileliseuli';
+    if (same(vector, [true, false, true, false, false, false]))
+      return 'shanidziseuli';
+    if (same(vector, [false, false, true, true, false, false]))
+      return 'khutsuri';
+    if (same(vector, [false, true, true, false, false, false]))
+      return 'sasataure';
 
     if (same(vector, [false, false, false, false, true, false])) return 'latin';
 

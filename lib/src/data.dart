@@ -216,6 +216,6 @@ class GeorgianData {
     'mtavruli': RegExp(r'[Ა-Ჿ]'),
     'asomtavruli': RegExp(r'[Ⴀ-Ⴥ]'),
     'nuskhuri': RegExp(r'[ⴀ-ⴥ]'),
-    'latin': RegExp(r'[a-zA-Z]')
+    'latin': RegExp(r'[a-zA-Z]'),
   };
 }

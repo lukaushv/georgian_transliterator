@@ -46,22 +46,10 @@ class GeorgianCore {
 
   static String convertBicameral(String str, String from, String to) {
     const rules = {
-      'sasataure': {
-        'upper': 'asomtavruli',
-        'lower': 'mtavruli',
-      },
-      'tfileliseuli': {
-        'upper': 'mtavruli',
-        'lower': 'mkhedruli',
-      },
-      'shanidziseuli': {
-        'upper': 'asomtavruli',
-        'lower': 'mkhedruli',
-      },
-      'khutsuri': {
-        'upper': 'asomtavruli',
-        'lower': 'nuskhuri',
-      },
+      'sasataure': {'upper': 'asomtavruli', 'lower': 'mtavruli'},
+      'tfileliseuli': {'upper': 'mtavruli', 'lower': 'mkhedruli'},
+      'shanidziseuli': {'upper': 'asomtavruli', 'lower': 'mkhedruli'},
+      'khutsuri': {'upper': 'asomtavruli', 'lower': 'nuskhuri'},
     };
 
     final rule = rules[to];
@@ -75,13 +63,25 @@ class GeorgianCore {
     var converted = convertUnicameral(str, from, lowerScript);
 
     // First letter uppercase
-    converted = _capitalizeFirstConvertible(converted, lowerScript, upperScript);
+    converted = _capitalizeFirstConvertible(
+      converted,
+      lowerScript,
+      upperScript,
+    );
 
     // Letters after punctuation
-    converted = _capitalizeAfterSentenceEnd(converted, lowerScript, upperScript);
+    converted = _capitalizeAfterSentenceEnd(
+      converted,
+      lowerScript,
+      upperScript,
+    );
 
     // Letters before apostrophe
-    converted = _capitalizeBeforeApostrophe(converted, lowerScript, upperScript);
+    converted = _capitalizeBeforeApostrophe(
+      converted,
+      lowerScript,
+      upperScript,
+    );
 
     return converted;
   }
@@ -94,7 +94,11 @@ class GeorgianCore {
     }
   }
 
-  static String _capitalizeFirstConvertible(String text, String from, String to) {
+  static String _capitalizeFirstConvertible(
+    String text,
+    String from,
+    String to,
+  ) {
     final chars = text.split('');
     final fromAlphabet = GeorgianData.alphabets[from];
     final toAlphabet = GeorgianData.alphabets[to];
@@ -112,7 +116,11 @@ class GeorgianCore {
     return chars.join();
   }
 
-  static String _capitalizeAfterSentenceEnd(String text, String from, String to) {
+  static String _capitalizeAfterSentenceEnd(
+    String text,
+    String from,
+    String to,
+  ) {
     final chars = text.split('');
     final fromAlphabet = GeorgianData.alphabets[from];
     final toAlphabet = GeorgianData.alphabets[to];
@@ -139,7 +147,11 @@ class GeorgianCore {
     return chars.join();
   }
 
-  static String _capitalizeBeforeApostrophe(String text, String from, String to) {
+  static String _capitalizeBeforeApostrophe(
+    String text,
+    String from,
+    String to,
+  ) {
     final chars = text.split('');
     final fromAlphabet = GeorgianData.alphabets[from];
     final toAlphabet = GeorgianData.alphabets[to];

@@ -1,5 +1,8 @@
 class GeorgianToolkit {
-  static Map<String, double> frequency(String text, {String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]"}) {
+  static Map<String, double> frequency(
+    String text, {
+    String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]",
+  }) {
     final chars = text.toUpperCase().split('');
     final table = <String, double>{};
     final regex = RegExp(missPattern);
@@ -16,7 +19,10 @@ class GeorgianToolkit {
     return table;
   }
 
-  static Map<String, int> count(String text, {String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]"}) {
+  static Map<String, int> count(
+    String text, {
+    String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]",
+  }) {
     final chars = text.toUpperCase().split('');
     final table = <String, int>{};
     final regex = RegExp(missPattern);
@@ -29,7 +35,10 @@ class GeorgianToolkit {
     return table;
   }
 
-  static double friedman(String text, {String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]"}) {
+  static double friedman(
+    String text, {
+    String missPattern = r"[ა-ჰᲐ-ᲰႠ-Ⴠⴀ-ⴠa-zA-ZА]",
+  }) {
     final table = count(text, missPattern: missPattern);
     int sum = 0;
     int total = 0;
