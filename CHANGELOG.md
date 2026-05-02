@@ -32,7 +32,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  georgian_transliterator: ^0.1.0
+  georgian_transliterator: ^0.1.1
 ```
 
 Then run:
@@ -193,7 +193,7 @@ final result = GeorgianTransliterator.convert(
 
 ## Notes
 
-This is currently **v0.1.0** and focuses on the main Georgian writing systems.
+This is currently **v0.1.1** and focuses on the main Georgian writing systems.
 
 Future versions may include:
 
