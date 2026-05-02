@@ -1,7 +1,7 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library georgian_transliterator;
+library;
 
 export 'src/georgian_transliterator_api.dart';
 export 'src/core.dart';
